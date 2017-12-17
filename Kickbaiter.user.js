@@ -31,7 +31,10 @@
     const titleSelector = "div.clamp-3 a";
 
     function getProjectTitle(project) {
-        return project.querySelector(titleSelector).innerHTML;
+        let title = project.querySelector(titleSelector);
+        if (title)
+            return title.innerHTML;
+        return "";
     }
 
     function isClickbait(text) {
@@ -40,7 +43,7 @@
     }
 
     function markAsClickbait(project) {
-        project.style.opacity = 0.5;
+        project.classList.add("kickbait");
     }
 
     function processProject(project) {
@@ -77,6 +80,26 @@
         }
     }
 
-    setTimeout(run, 1000);
+    function applyCss(rules) {
+        let styleElem = document.createElement("style");
+        styleElem.type = "text/css";
+        if (styleElem.styleSheet) {
+            styleElem.styleSheet.cssText = rules;
+        } else {
+            styleElem.innerHTML = rules;
+        }
+        document.head.appendChild(styleElem);
+    }
+
+    run();
+
+    applyCss(`
+        .kickbait {
+            opacity: 0.25;
+        }
+        .kickbait:hover {
+            opacity: 0.5;
+        }
+    `);
 
 })();
