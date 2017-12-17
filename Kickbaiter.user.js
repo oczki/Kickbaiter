@@ -30,12 +30,24 @@
     const projectSelector = "div.mb5";
     const titleSelector = "div.clamp-3";
 
-    function getProjects() {
-        return document.querySelectorAll(projectSelector);
-    }
-
     function getProjectTitle(project) {
         return project.querySelector(titleSelector).innerHTML;
+    }
+
+    function isClickbait(text) {
+        let regexp = new RegExp(triggers.join("|"), "i");
+        return regexp.test(text);
+    }
+
+    function markAsClickbait(project) {
+        project.style.opacity = 0.5;
+    }
+
+    function processProject(project) {
+        let title = getProjectTitle(project);
+        if (isClickbait(title)) {
+            markAsClickbait(project);
+        }
     }
 
     function setProcessedFlag(project) {
@@ -53,20 +65,8 @@
         }
     }
 
-    function isClickbait(text) {
-        let regexp = new RegExp(triggers.join("|"), "i");
-        return regexp.test(text);
-    }
-
-    function markAsClickbait(project) {
-        project.style.opacity = 0.5;
-    }
-
-    function processProject(project) {
-        let title = getProjectTitle(project);
-        if (isClickbait(title)) {
-            markAsClickbait(project);
-        }
+    function getProjects() {
+        return document.querySelectorAll(projectSelector);
     }
 
     function run() {
