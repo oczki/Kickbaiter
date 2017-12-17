@@ -95,10 +95,14 @@
 
     applyCss(`
         .kickbait {
-            opacity: 0.25;
+            opacity: 0.15;
+            transition: opacity 0.5s;
         }
         .kickbait:hover {
             opacity: 0.5;
+        }
+        .kickbait * {
+            cursor: not-allowed;
         }
     `);
 
