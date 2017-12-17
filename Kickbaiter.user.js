@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Kickbaiter
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  The WORLD'S FIRST, SMART, ULTIMATE userscript which hides projects that use clickbait-y text.
 // @author       fri
 // @match        https://www.kickstarter.com/discover/*
