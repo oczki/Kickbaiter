@@ -48,9 +48,8 @@
 
     function processProject(project) {
         let title = getProjectTitle(project);
-        if (isClickbait(title)) {
+        if (isClickbait(title))
             markAsClickbait(project);
-        }
     }
 
     function setProcessedFlag(project) {
@@ -75,19 +74,17 @@
     function run() {
         setTimeout(run, 1000);
         let projects = getProjects();
-        for (let project of projects) {
+        for (let project of projects)
             processProjectIfNeeded(project);
-        }
     }
 
     function applyCss(rules) {
         let styleElem = document.createElement("style");
         styleElem.type = "text/css";
-        if (styleElem.styleSheet) {
+        if (styleElem.styleSheet)
             styleElem.styleSheet.cssText = rules;
-        } else {
+        else
             styleElem.innerHTML = rules;
-        }
         document.head.appendChild(styleElem);
     }
 
