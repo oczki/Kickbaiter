@@ -28,7 +28,7 @@
 
     const processedFlag = "kickbait-processed";
     const projectSelector = "div.mb5";
-    const titleSelector = "div.clamp-3";
+    const titleSelector = "div.clamp-3 a";
 
     function getProjectTitle(project) {
         return project.querySelector(titleSelector).innerHTML;
