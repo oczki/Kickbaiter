@@ -12,7 +12,7 @@
     'use strict';
 
     const triggers = [
-        "(?!smartp)smart([^p]|er|est)?",  // smart, smarter, smartest, but not smartphone
+        "(?!smartp)smart(er|est)?",  // smart, smarter, smartest, but not smartphone
         "simple(r|st)?",
         "(world'?s? )?(1|fir|be|mo|smalle|large|wide)st",
         "game.?chang.*",

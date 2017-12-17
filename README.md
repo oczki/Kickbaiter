@@ -6,7 +6,7 @@ The projects found to be clickbait get their div dimmed (15% opacity, 50% on hov
 
 Example list of triggers, which you are free to modify:
 
-- `"(?!smartp)smart([^p]|er|est)?"`
+- `"(?!smartp)smart(er|est)?"`
 - `"simple(r|st)?"`
 - `"(world'?s? )?(1|fir|be|mo|smalle|large|wide)st"`
 - `"game.?chang.*"`
