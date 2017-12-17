@@ -11,6 +11,21 @@
 (function() {
     'use strict';
 
+    const triggers = [
+        "(?!smartp)smart([^p]|er|est)?",  // smart, smarter, smartest, but not smartphone
+        "simple(r|st)?",
+        "(world'?s? )?(1|fir|be|mo|smalle|large|wide)st",
+        "game chang.*",
+        "innovat.*",
+        "levitat.*",
+        "revolut.*",
+        "3d print.*",       // way too many of them
+        "ultimate",
+        "re[id]\\w{3,7}ed",  // reinvented, reimagined, redesigned
+        "hologra.*",        // these are not holograms
+        "all\\-?in\\-?one"
+    ];
+
     const processedFlag = "kickbait-processed";
     const projectSelector = "div.mb5";
     const titleSelector = "div.clamp-3";
@@ -38,15 +53,9 @@
         }
     }
 
-    function textMatch(haystack, needle) {
-        return haystack.toLowerCase().indexOf(needle) !== -1;
-    }
-
     function isClickbait(text) {
-        return textMatch(text, "first") ||
-               textMatch(text, "smart") ||
-               textMatch(text, "the most") ||
-               textMatch(text, "all-in-one");
+        let regexp = new RegExp(triggers.join("|"), "i");
+        return regexp.test(text);
     }
 
     function markAsClickbait(project) {
@@ -61,12 +70,13 @@
     }
 
     function run() {
+        setTimeout(run, 1000);
         let projects = getProjects();
         for (let project of projects) {
             processProjectIfNeeded(project);
         }
     }
 
-    run();
+    setTimeout(run, 1000);
 
 })();
