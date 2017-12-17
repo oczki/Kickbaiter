@@ -19,10 +19,10 @@
         "innovat.*",
         "levitat.*",
         "revolut.*",
-        "3d print.*",       // way too many of them
+        "3d print.*",        // way too many of them
         "ultimate",
         "re[id]\\w{3,7}ed",  // reinvented, reimagined, redesigned
-        "hologra.*",        // these are not holograms
+        "hologra.*",         // these are not holograms
         "all\\-?in\\-?one"
     ];
 
