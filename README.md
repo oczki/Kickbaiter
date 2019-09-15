@@ -22,7 +22,7 @@ Example list of triggers, which you are free to modify:
 Installation
 ---
 
-Get a browser extension that lets you run userscripts. Depending on your browser it might be called Tampermonkey, Greasemonkey, or some other animal.
+Get a browser extension that lets you run userscripts. Depending on your browser it might be called Violentmonkey, Greasemonkey, or some other animal.
 
 Then, copy the contents of the `Kickbaiter.user.js` file from this repo and paste it in your extension's editor.
 
